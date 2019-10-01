@@ -1,3 +1,16 @@
 .cs-background {
+    height: 60px;
     background-color: #343a40;
+}
+
+body {
+    background-color: #192f60;
+}
+
+.cs-container {
+    background-color: #ffffff;
+}
+
+h1 {
+    border-bottom: solid 1px #000000;
 }
