@@ -80,3 +80,20 @@ h1 {
 .cs-button-box {
   height: 105px
 }
+
+.cs-box2 {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.cs-container2 {
+  background-color: #192f60;
+}
+
+aside {
+  background-color: #ffffff;
+}
+
+.reportlist {
+  background-color: #ffffff;
+}
