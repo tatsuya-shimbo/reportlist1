@@ -1,1 +1,22 @@
-<h1 class="text-center">Welcome to the reportlist</h1>
+<% if logged_in? %>
+  <h1 class="text-center">ログインしました</h1>
+<% else %>
+  <div class="mb-0">
+    <%= render "layouts/flash_messages" %>
+  </div>
+  <div class="cs-unlogin">
+    <div class="cs-box">
+      <h1 class="text-center cs-text1">Welcome To The Reportlist</h1>
+      <p class="text-center cs-text2 mt-3">Reportlistはレポートをネット上で管理するためのサイトです。</p>
+      <div class="cs-login-buttons">
+        <div class="cs-button-box">
+          <%= link_to "ログイン！", login_path, class: "cs-login-button" %>
+        </div>
+        <div class="cs-signup">
+          <p class="cs-text3">アカウントをお持ちでない方:</p>
+          <%= link_to "新規登録", signup_path, class: "cs-signup-button btn btn-light" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -21,10 +21,6 @@
     <header>
       <%= render "layouts/navbar" %>
     </header>  
-    <div class="container cs-container p-4">
-      <%= render "layouts/flash_messages" %>
-      
-      <%= yield %>
-    </div>
+    <%= yield %>
   </body>
 </html>
