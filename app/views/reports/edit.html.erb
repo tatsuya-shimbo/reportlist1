@@ -1,0 +1,41 @@
+<%= render "layouts/flash_messages" %>
+  <div class="container cs-container2 mt-4">
+    <div class="row cs-box2">
+      <%= render "layouts/aside" %>
+      <div class="col-sm-8">
+        <div class="cs-white p-3">
+          <h1 class="text-center mb-3">レポートを編集</h1>
+          
+          <%= form_with(model: @report, local: true) do |f| %>
+            <%= render 'layouts/error_messages', model: f.object %>
+            
+            <div class="text-left text-sm-center">
+              <div class="form-group row">
+                <%= f.label :repo, "ファイル:", class: "col-sm-3 offset-sm-1 col-form-label" %>
+                <%= f.file_field :repo, class: "form-control-file col-sm-6" %>
+              </div>
+              
+              <div class="form-group row">
+                <%= f.label :title, "タイトル:", class: "col-sm-3 offset-sm-1 col-form-label" %>
+                <%= f.text_field :title, class: "form-control col-sm-6" %>
+              </div>
+              
+              <div class="form-group row">
+                <%= f.label :day, "実験日:", class: "col-sm-3 offset-sm-1 col-form-label" %>
+                <%= f.select :day_y, options_for_select(@year.map{|c|[c[:name_y], c[:id_y]]}), {}, {class: 'mr-2'} %>
+                <%= f.select :day_m, options_for_select(@month.map{|c|[c[:name_m], c[:id_m]]}), {}, {class: 'mr-2'} %>
+                <%= f.select :day_d, options_for_select(@day.map{|c|[c[:name_d], c[:id_d]]}), {}, {} %>
+              </div>
+              
+              <div class="form-group row">
+                <%= f.label :teaching, "授業名", class: "col-sm-3 offset-sm-1 col-form-label" %>
+                <%= f.text_field :teaching, class: "form-control col-sm-6" %>
+              </div>
+              
+              <%= f.submit "編集",class: "btn btn-primary btn-block col-sm-3 offset-sm-4" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>

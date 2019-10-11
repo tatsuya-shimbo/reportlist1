@@ -1,6 +1,26 @@
-<aside class="col-sm-3 p-3 text-center">
-  <h1>レポート</h1>
-  <div>
-    大学一年
+<aside class="col-sm-4 mb-3 cs-container2">
+  <div class="cs-white p-3">
+    <h1 class="text-center">レポート</h1>
+    <div class="hidden_box">
+      <% if current_user.university == "東京工業大学" %>
+        <% (1..4).each do |num| %>
+          <div>
+            <label for=<%= "label"+ num.to_s %>>大学<%= num.to_s %>年</label>
+            <input type="checkbox" id=<%= "label" + num.to_s %>>
+            <div class="hidden_show">
+              <ul>
+                <% eval("@reportlist = @reportlist_#{num}") %>
+                <% unless @reportlist == nil %>
+                  <% @reportlist.each do |report| %>
+                    <li><%= link_to report.title, report_path(report) %></li>
+                  <% end %>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+      <% end %>
+　　</div>
   </div>
 </aside>

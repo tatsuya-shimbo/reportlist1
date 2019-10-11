@@ -1,6 +1,36 @@
-<div class="container cs-container p-4 mt-4">
+<div class="container cs-container2 mt-4">
   <%= render "layouts/flash_messages" %>
-  
-  <h1>Users#show</h1>
-  <p>Find me in app/views/users/show.html.erb</p>
+  <div class="row cs-box2 mt-4">
+    <%= render "layouts/aside" %>
+    <div class="col-sm-8">
+      <div class="cs-white p-4">
+        <h1 class="text-center mb-3">アカウント情報</h1>
+        <table class="table">
+          <tr>
+            <th>名前</th>
+            <td><%= @user.name %></td>
+          </tr>
+          <tr>
+            <th>メール</th>
+            <td><%= @user.email %></td>
+          </tr>
+          <tr>
+            <th>入学した年</th>
+            <td><%= @user.entrance_year %>年</td>
+          </tr>
+          <tr>
+            <th>大学</th>
+            <td><%= @user.university %></td>
+          </tr>
+          <tr>
+            <th>登録数</th>
+            <td><%= @count_reports %></td>
+          </tr>
+        </table>
+        <div class="mt-3">
+          <%= link_to "編集する", edit_user_path, class: "cs-edit-button btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

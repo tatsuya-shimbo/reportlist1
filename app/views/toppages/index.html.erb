@@ -1,10 +1,25 @@
 <% if logged_in? %>
-  <%= render "layouts/flash_messages" %>
   <div class="container cs-container2 mt-4">
-    <div class="row cs-box2">
+  <%= render "layouts/flash_messages" %>
+    <div class="row cs-box2 mt-4">
       <%= render "layouts/aside" %>
-      <div class="reportlist col-sm-8 offset-sm-1 p-3">
-        <h1 class="text-center">レポート一覧</h1>
+      <div class="col-sm-8">
+        <div class="cs-white p-4 mb-4">
+          <h1 class="text-center"><%= link_to "レポートを登録!", new_report_path %></h1>
+        </div>
+        <div class="cs-white p-3">
+          <h1 class="text-center mb-3">レポート一覧</h1>
+          <ul>
+            <% @reports.each do |report| %>
+              <li class="mb-3">
+                <%= link_to report.title, report_path(report), class: "report" %>
+                <%= link_to "delete", report, method: :delete, data: { confirm: "本当によろしいですか?" }, class: "btn btn-outline-danger btn-sm cs-delete" %>
+                <%= link_to "pdf", url_for(report.repo), class: "btn btn-outline-info btn-sm cs-pdf" %>
+              </li>
+            <% end %>
+          </ul>
+          <%= paginate @reports %>
+        </div>
       </div>
     </div>
   </div>

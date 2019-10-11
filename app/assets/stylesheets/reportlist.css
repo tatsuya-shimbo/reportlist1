@@ -51,6 +51,7 @@ h1 {
 
 .cs-login-button:hover {
     color: #ffffff;
+    text-decoration: none;
 }
 
 .cs-login-button:active {
@@ -90,10 +91,85 @@ h1 {
   background-color: #192f60;
 }
 
-aside {
+.cs-white {
   background-color: #ffffff;
 }
 
-.reportlist {
-  background-color: #ffffff;
+.report {
+  color: #000000;
+  font-size: 20px;
+  display: inline-block;
+}
+
+.cs-delete {
+  width: 60px;
+  float: right;
+}
+
+.cs-pdf {
+  width: 60px;
+  float: right;
+  margin-right: 10px;
+}
+
+.cs-edit-button {
+  display: table;
+  padding: 5px 30px;
+  height: 40px;
+  margin: 0 auto;
+}
+
+.cs-edit-button2 {
+  display: table;
+  padding: 5px 60px;
+  height: 40px;
+  margin: 0 auto;
+}
+
+.cs-line {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #000000;
+  margin-bottom: 20px;
+}
+
+.cs-text4 {
+  display: inline-block;
+  padding: 0.8em;
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #e61c0e;
+}
+
+.cs-text4:hover {
+  text-decoration: none;
+  color: #000000;
+  background-color: #d11d1d;
+}
+
+.hidden_box label {
+    padding: 5px;
+    font-size: 20px;
+    border: solid 1px black;
+    cursor :pointer;
+}
+
+.hidden_box label:hover {
+    background: #efefef;
+}
+
+.hidden_box input {
+    display: none;
+}
+
+.hidden_box .hidden_show {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.8s;
+}
+
+.hidden_box input:checked ~ .hidden_show {
+    height: auto;
+    opacity: 1;
 }

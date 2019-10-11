@@ -1,6 +1,51 @@
 <div class="container cs-container p-4 mt-4">
   <%= render "layouts/flash_messages" %>
+  <div class="text-center mb-3">
+    <h1>編集</h1>
+  </div>
   
-  <h1>Users#edit</h1>
-  <p>Find me in app/views/users/edit.html.erb</p>
+  
+    <%= form_with(model: @user, local: true) do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
+    
+      <div class="text-left text-sm-center">
+        <div class="form-group row">
+          <%= f.label :name, "名前:", class: "col-sm-2 offset-sm-2 col-form-label" %>
+          <%= f.text_field :name, class: "form-control col-sm-6" %>
+        </div>
+        
+        <div class="form-group row">
+          <%= f.label :email, "メールアドレス:", class: "col-sm-2 offset-sm-2 col-form-label" %>
+          <%= f.email_field :email, class: "form-control col-sm-6" %>
+        </div>
+        
+        <div class="form-group row">
+          <%= f.label :university, "大学:", class: "col-sm-2 offset-sm-2 col-form-label" %>
+          <%= f.select :university, [["東京工業大学", "東京工業大学"],["その他", "その他"]], class: "form-control col-sm-6" %>
+        </div>
+        
+        <div class="form-group row">
+          <%= f.label :entrance_year, "入学した年:", class: "col-sm-2 offset-sm-2 col-form-label" %>
+          <%= f.number_field :entrance_year, class: "form-control col-8 col-sm-2" %>
+          <p class="col-2 col-form-label text-left">年</p>
+        </div>
+        
+        <div class="form-group row">
+          <%= f.label :password, "パスワード:", class: "col-sm-2 offset-sm-2 col-form-label" %>
+          <%= f.password_field :password, class: "form-control col-sm-6" %>
+        </div>
+        
+        <div class="form-group row">
+          <%= f.label :password_confirmation, "パスワード(確認):", class: "col-sm-2 offset-sm-2 col-form-label" %>
+          <%= f.password_field :password_confirmation, class: "form-control col-sm-6" %>
+        </div>
+        
+        <div class="box3 cs-line">
+          <%= f.submit "編集", class: "btn btn-primary cs-edit-button2" %>
+        </div>
+        <div>
+          <%= link_to "アカウントを削除する", @user, method: :delete, data: { confirm: "本当によろしいですか?" }, class: "cs-text4" %>
+        </div>
+      </div>
+    <% end %> 
 </end>  
