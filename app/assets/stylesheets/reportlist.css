@@ -17,14 +17,13 @@ h1 {
 
 .cs-unlogin {
   background-image: url("/images/titech_img01.jpg");
-  height: 800px;
   background-size: cover;
 }
 
 .cs-box {
   display: table;
   margin: 0 auto;
-  padding-top: 220px;
+  padding: 220px 0 180px;
 }
 
 .cs-text1 {

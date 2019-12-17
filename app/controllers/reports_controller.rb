@@ -32,6 +32,17 @@ class ReportsController < ApplicationController
   end
 
   def edit
+    day_fy = @report.day / 10000
+    selected_y = {name_y: day_fy.to_s + "年", id_y: day_fy}
+    @year.unshift(selected_y)
+    
+    day_fm = (@report.day - (@report.day / 10000) * 10000) / 100
+    selected_m = {name_m: day_fm.to_s + "月", id_m: day_fm}
+    @month.unshift(selected_m)
+    
+    day_fd = (@report.day - (@report.day / 100) * 100)
+    selected_d = {name_d: day_fd.to_s + "日", id_d: day_fd}
+    @day.unshift(selected_d)
   end
 
   def update

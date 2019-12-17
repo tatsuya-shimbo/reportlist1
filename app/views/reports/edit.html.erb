@@ -22,7 +22,7 @@
               
               <div class="form-group row">
                 <%= f.label :day, "実験日:", class: "col-sm-3 offset-sm-1 col-form-label" %>
-                <%= f.select :day_y, options_for_select(@year.map{|c|[c[:name_y], c[:id_y]]}), {}, {class: 'mr-2'} %>
+                <%= f.select :day_y, options_for_select(@year.map{|c|[c[:name_y], c[:id_y]]},), {}, {class: 'mr-2'} %>
                 <%= f.select :day_m, options_for_select(@month.map{|c|[c[:name_m], c[:id_m]]}), {}, {class: 'mr-2'} %>
                 <%= f.select :day_d, options_for_select(@day.map{|c|[c[:name_d], c[:id_d]]}), {}, {} %>
               </div>
